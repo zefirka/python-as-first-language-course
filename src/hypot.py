@@ -4,3 +4,5 @@ from math import sqrt
 
 def hypot(a, b):
     pass
+
+

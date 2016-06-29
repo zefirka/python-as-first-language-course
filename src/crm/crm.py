@@ -22,3 +22,9 @@ class Customer(Emitter):
         self.products.append(product)
         self.emit('buy', product)
         product.emit('but', self.name)
+
+
+crm = CRM()
+
+crm.addCustomer('John')
+
