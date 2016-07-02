@@ -1,4 +1,4 @@
-list = [
+letters = [
     'alpha',  'betta', 'gamma',
     'delta',  'kappa', 'gamma',
     'eta',    'teta',  'sigma',
