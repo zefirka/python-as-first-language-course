@@ -1,4 +1,5 @@
 from math import sqrt
+import sys
 
 # чтобы вычислить квадратный корень из n используйте sqrt(n)
 
@@ -17,7 +18,7 @@ def hypot(a, b):
         return sqrt(a**2 + b**2)
 
 
-a = input('Catet 1 = ', ())
-b = input('Catet 2 = ... ')
+a = sys.argv[1]
+b = sys.argv[2]
 
 print(hypot(a, b))

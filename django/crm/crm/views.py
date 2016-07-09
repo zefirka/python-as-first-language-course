@@ -11,11 +11,15 @@ def customer(request, name):
 	return HttpResponse(crm.get_customer(name))
 
 def new_customer(request, name):
-	crm.create.customer(name)
+	crm.create['customer'](name)
 	return HttpResponse('New customer {0} created'.format(name))
+
+def new_product(request, name):
+	crm.create['product'](name)
+	return HttpResponse('New product {0} created'.format(name))
 
 def buy(request, customer_name, product):	
 	return HttpResponse(crm.buy(customer_name, product))
 
 def products(request):
-	return HttpResponse(crm.get_all_products())
+	return HttpResponse(crm.get_all_products()) 
