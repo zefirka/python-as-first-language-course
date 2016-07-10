@@ -1,1 +1,1 @@
-[{"name": "Car", "cost": 30000}, {"name": "Book", "cost": 8}, {"name": "New Product", "cost": 180}, {"name": "TV", "cost": 2000}, {"name": "printer", "cost": 150}, {"name": "PS4", "cost": 300}]
+[{"cost": 30000, "name": "Car"}, {"cost": 8, "name": "Book"}, {"cost": 180, "name": "New Product"}, {"cost": 2000, "name": "TV"}, {"cost": 150, "name": "printer"}, {"cost": 300, "name": "PS4"}, {"cost": 33, "name": "Joe"}, {"cost": 333, "name": "Prod"}]

@@ -44,4 +44,3 @@ class Admin(User):
 			raise Exception('Product: {} already in products.json'.format(product_name))
 
 		fs.update_json_list('products.json', product.value())
-
