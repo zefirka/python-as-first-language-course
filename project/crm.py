@@ -1,22 +1,50 @@
-#  Открыть файлы customers.txt и products.txt и считать оттуда информацияю 
-# записав все в списки products и customers
+from User import Customer, Admin
+import utils
+import fs
 
-products = []
-customers = []
-admins = []
+users = fs.read_json('users.json')
 
-def create_product(product_name):
-	with open('products.txt', 'r+') as products:
-		content = products.read()
-		prods = content.split('\n')
+admins = users.get('admins', [])
+customers = users.get('customers', [])
 
-		if product_name in prods:
-			raise Exception('Product: {0} already exists'.format(product_name))
+i = 0
+while i < len(admins):
+	admin_data = admins[i]
+	admins[i] = Admin(admin_data['name'], admin_data['age'])
+	i += 1
 
-		products.write('\n{0}'.format(product_name))
+i = 0
+while i < len(customers):
+	customer_data = customers[i]
+	customers[i] = Customer(customer_data['name'], customer_data['age'])
+	i += 1
 
-def create_customer(name):
-	'Создает нового клиента и записывает его имя в файл: customers.txt'
-	pass
+kind = None
 
+while True:
+	user_name = input('Your name: ... ')
+
+	i = 0
+	while i < len(admins):
+		if admins[i].name == user_name:
+			print('Hello, Admin: {}'.format(user_name))
+			kind = 'admin'
+			break
+		i += 1
+
+	if kind:
+		break
+
+	i = 0
+	while i < len(customers):
+		if customers[i].name == user_name:
+			print('Hello, Customer: {}'.format(user_name))
+			kind = 'customer'
+			break
+		i += 1
+
+	if kind:
+		break
+
+	print('Invalid name')
 

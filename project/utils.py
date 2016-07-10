@@ -20,3 +20,11 @@ def every(predicate, list):
 
 def is_valid_product(product_name):
     return product_name.isalpha()
+
+
+def is_name_in_list(name, list):
+    
+    def equal_names(item):
+        return item['name'] == name
+    
+    return some(equal_names, list)

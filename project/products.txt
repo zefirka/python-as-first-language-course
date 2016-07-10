@@ -1,4 +1,0 @@
-Car
-Book
-Computer
-iPhone

@@ -1,0 +1,9 @@
+{
+	"admins": [
+		{
+			"name": "SuperUser",
+			"age": 30
+		}
+	],
+	"customers": []
+}
