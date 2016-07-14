@@ -1,9 +1,39 @@
 {
-	"admins": [
-		{
-			"name": "SuperUser",
-			"age": 30
-		}
-	],
-	"customers": []
+  "customers": [
+    {
+      "age": 34,
+      "name": "Jane",
+      "account": 952,
+      "products": [
+        {
+          "quantity": 1,
+          "name": "Guitar",
+          "cost": 500
+        },
+        {
+          "quantity": 4,
+          "name": "Book",
+          "cost": 8
+        }
+      ]
+    },
+    {
+      "age": 34,
+      "name": "Joe",
+      "account": 1000,
+      "products": [
+        {
+          "quantity": 30,
+          "name": "Vivo",
+          "cost": 1000
+        }
+      ]
+    }
+  ],
+  "admins": [
+    {
+      "age": 30,
+      "name": "SuperUser"
+    }
+  ]
 }

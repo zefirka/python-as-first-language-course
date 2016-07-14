@@ -1,8 +1,14 @@
 """
-    functions - модуль для работы с функциями и списками
+    Модуль для работы с функциями и списками
 """
 
+from printer import *
+
 def some(predicate, list):
+    """
+        возвращает True если хотя-бы один элементы list 
+        соответствуют выражению predicate(item)
+    """
     for item in list:
         if predicate(item):
            return True    
@@ -21,10 +27,24 @@ def every(predicate, list):
 def is_valid_product(product_name):
     return product_name.isalpha()
 
+def propEq(p, v):
+    return lambda obj: obj[p] == v
+
+def prop(p):
+    return lambda obj: obj[p]
 
 def is_name_in_list(name, list):
-    
-    def equal_names(item):
-        return item['name'] == name
-    
-    return some(equal_names, list)
+    return some(propEq('name', name), list)
+
+def find_by_name(name, lst):
+    res = list(filter(propEq('name', name), lst))
+    if len(res):
+        return res[0]
+    return False
+
+def list_all(items):
+    def list_all_items(_):
+        for i in items:
+            printYellow(i)
+        print('\n')
+    return list_all_items
