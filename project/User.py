@@ -111,7 +111,7 @@ class Admin(User):
         except:
             print('Customer: {} was not added'.format(customer.name))
         else:
-            print('Customer: {0} was added to list'.format(customer.name))
+            print('Customer: {} was added to list'.format(customer.name))
 
     def add(self, name, cost=None, qty=1):
         """

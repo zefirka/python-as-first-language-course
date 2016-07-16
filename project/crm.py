@@ -9,7 +9,6 @@ from Products import Product
 from Errors import QuantityError, AccountError
 
 from printer import *
-from utils import list_all
 import fs
 
 # Функции - помощники
@@ -176,25 +175,39 @@ def customer_line():
         customer_commands.get(cmd).get('fn')(user)
 
 def create_customer(c):
+    """
+        @public
+        @param {dict} c
+        @return {User.Customer}
+    """
     return Customer(c.get('name'), c.get('age'), c.get('products'), c.get('account'))
 
 def create_admin(a):
+    """
+        @public
+        @param {dict} a
+        @return {User.Admin}
+    """
     return Admin(a.get('name'), a.get('age'))
+
+# Чтение сырых данных
+users = fs.read_json('users.json')
+
+admins = users.get('admins', [])
+customers = users.get('customers', [])
+
+# Инициализация
+user = None
+admins = list(map(create_admin, admins))
+customers = list(map(create_customer, customers))
 
 def main():
     """
         Главная функция
     """
-    # Чтение сырых данных
-    users = fs.read_json('users.json')
-
-    admins = users.get('admins', [])
-    customers = users.get('customers', [])
-
-    # Инициализация
-    user = None
-    admins = list(map(create_admin, admins))
-    customers = list(map(create_customer, customers))
+    global user
+    global admins
+    global customers
 
     # Главный цикл
     while True:

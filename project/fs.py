@@ -5,15 +5,24 @@ USERFILE = 'users.json'
 PRODUCTFILE = 'products.json'
 
 def read_json(filename):
+    """
+        Читает json из filename и возвращает структуру данных
+        @param {str} filename
+        @return {json}
+    """
     with open(filename, 'r') as jsonfile:
         content = jsonfile.read()
         return json.loads(content)
 
 def write_json(filename, struct):
+    """
+        Записывает json в filename из struct
+        @param {str} filename
+        @param {object} struct
+    """
     with open(filename, 'w+') as jsonfile:
         content = json.dumps(struct)
         jsonfile.write(content)
-
 
 def update_json_list(filename, dict):
     struct = read_json(filename)

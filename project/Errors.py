@@ -1,3 +1,5 @@
+'Модуль специфичных ошибок'
+
 class AccountError(Exception):
     def __init__(self, message, required):
         super().__init__(message)

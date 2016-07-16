@@ -2,8 +2,6 @@
     Модуль для работы с функциями и списками
 """
 
-from printer import *
-
 def some(predicate, list):
     """
         возвращает True если хотя-бы один элементы list 
@@ -41,10 +39,3 @@ def find_by_name(name, lst):
     if len(res):
         return res[0]
     return False
-
-def list_all(items):
-    def list_all_items(_):
-        for i in items:
-            printYellow(i)
-        print('\n')
-    return list_all_items

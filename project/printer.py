@@ -25,3 +25,10 @@ def printCommands(command_dict, max_len=52):
         line += description
         printGreen(line)
     printRed(' - quit (sign out)\n')
+
+def list_all(items):
+    def list_all_items(_):
+        for i in items:
+            printYellow(i)
+        print('\n')
+    return list_all_items
