@@ -44,14 +44,14 @@ $ pip -h
 	psycopg2==2.6.1
 	whitenoise==2.0.6
 	requests==2.9.1
-	virtualenv=15.0.1
+	virtualenv==15.0.1
 ```
 
 Ставяться они следующей командой:
 ```bash
 $ pip install <имя библиотеки>==<номер версии>
 $ #например
-$ pip install Django=1.9.2
+$ pip install Django==1.9.2
 ```
 <a name="hw"></a>
 # Домашнее задание на вторую неделю
